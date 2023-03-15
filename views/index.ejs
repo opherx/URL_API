@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/c49ecf09d0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Shortly URL shortening API Challenge</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <!-- NAVIGATION SECTION -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <img src="images/logo.svg" alt="" class="navbar-brand" />
+
+        <button
+          class="navbar-toggler hamburger"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Resources</a></li>
+            <li><hr class="divider" /></li>
+          </ul>
+
+          <ul class="d-flex navbar-nav">
+            <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+            <button class="btn btn-outline-success">Sign Up</button>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="container hero">
+      <div class="row">
+        <div class="column col-lg-6 h-text">
+          <h1>More than just shorter links</h1>
+          <p>
+            Build your brand’s recognition and get detailed insights on how your
+            links are performing.
+          </p>
+          <button onclick="myFunction()">Get Started</button>
+        </div>
+        <div class="column col-lg-6 order-first h-img">
+          <img src="images/illustration-working.svg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- LINKS SEC -->
+    <div class="links-features">
+      <!-- SHORTEN LINK -->
+      <div class="container shorten">
+        <form action="/" class="row" method="post">
+          <input
+            type="text"
+            name="input"
+            class="column col-12 col-md-6 col-lg-6 form-item"
+            placeholder="Shorten a link here..."
+            required
+          />
+          <button
+            class="column col-12 col-md-2 col-lg-2 form-item"
+            type="submit"
+          >
+            Shorten It!
+          </button>
+        </form>
+      </div>
+
+      <!-- SHOTERNED LINKS -->
+      <% for(var i = 0 ; i<newLink.length; i++) { %>
+      <div class="Shortened">
+        <div  class="shortened-links">
+          <h6 class="original-link"><a href="#"><%= newLink[i].original %></a> </h6>
+          <hr>
+          <p class="new-link" > <a href="#" class="shortlink"> <%= newLink[i].short%> </a> </p>
+          <button type="button" name="button" class="copy">copy</button>
+        </div>
+      </div>
+  <% } %>
+
+
+
+      <div class="features">
+                <!-- FEATURES SECTION -->
+        <h1 class="ad">Advanced Statistics</h1>
+        <p class="p1">
+          Track how your links are performing across the web with our advanced
+          statistics dashboard.
+        </p>
+
+        <div class="cards">
+          <img src="images/icon-brand-recognition.svg" alt="" />
+          <div class="texts">
+            <h3>Brand Recognition</h3>
+            <p>
+              Boost your brand recognition with each click. Generic links don’t
+              mean a thing. Branded links help instil confidence in your
+              content.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <img src="images/icon-detailed-records.svg" alt="" />
+          <div class="texts">
+            <h3>Detailed Records</h3>
+            <p>
+              Gain insights into who is clicking your links. Knowing when and
+              where people engage with your content helps inform better
+              decisions.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards last-card">
+          <img src="images/icon-fully-customizable.svg" alt="" />
+          <div class="texts">
+            <h3>Fully Customizable</h3>
+            <p>
+              Improve brand awareness and content discoverability through
+              customizable links, supercharging audience engagement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOST SECTION -->
+    <div class="boost-section">
+      <h1 class="boost-text">
+        Boost your links today
+      </h1>
+      <button>Get Started</button>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+      <img src="images/logo - white.svg" alt="">
+      <div class="feature">
+        <h3>Features</h3>
+        <ul>
+          <li>Link Shortening</li>
+          <li>Branded Links</li>
+          <li>Analytics</li>
+        </ul>
+      </div>
+      <div class="Resources">
+        <h3>Resources</h3>
+        <ul>
+          <li>Blog</li>
+          <li>Developers</li>
+          <li>Support</li>
+        </ul>
+      </div>
+      <div class="Company">
+        <h3>Company</h3>
+        <ul>
+          <li>About</li>
+          <li>Our Team</li>
+          <li>Careers</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div class="social-links">
+        <img src="images/icon-facebook.svg" alt="">
+        <img src="images/icon-twitter.svg" alt="">
+        <img src="images/icon-pinterest.svg" alt="">
+        <img src="images/icon-instagram.svg" alt="">
+      </div>
+      <h5>coded by <strong>OPHERX</strong> @2023 </h5>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
