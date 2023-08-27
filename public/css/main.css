@@ -287,7 +287,7 @@ footer h5 {
   background-color: blue;
 }
 
-@media (min-width: 550px) and (max-width: 1440px) {
+@media (min-width: 451px){
   body {
     display: none;
   }
